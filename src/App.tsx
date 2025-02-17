@@ -1,5 +1,13 @@
+import Layout from './layout/Layout'
+
 const App = () => {
-  return <></>
+  return (
+    <>
+      <div className="font-(--font-inter)">
+        <Layout></Layout>
+      </div>
+    </>
+  )
 }
 
 export default App
