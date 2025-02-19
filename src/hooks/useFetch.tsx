@@ -5,6 +5,7 @@ const useFetch = (url: string) => {
   const [data, setData] = useState<any>(null)
 
   useEffect(() => {
+    if (!url) return
     const fetchData = async () => {
       try {
         const response = await axios.get(url, {

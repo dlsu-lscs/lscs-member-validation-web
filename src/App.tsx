@@ -1,6 +1,7 @@
 import Layout from './layout/Layout'
 import { BrowserRouter } from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google'
+import { Toaster } from '@/components/ui/sonner'
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
         <BrowserRouter>
           <div className="font-(--font-inter)">
             <Layout></Layout>
+            <Toaster />
           </div>
         </BrowserRouter>
       </GoogleOAuthProvider>
