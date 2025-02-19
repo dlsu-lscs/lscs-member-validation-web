@@ -22,7 +22,7 @@ const Home = () => {
           </>
         ) : (
           <>
-            <div>
+            <div className="space-y-8">
               <div className="bg-gray-950 border-2 border-gray-500 rounded-lg p-2 flex flex-col items-center justify-center space-y-3">
                 <UserInfo></UserInfo>
               </div>
