@@ -1,6 +1,7 @@
 import useFetch from '@/hooks/useFetch'
 import CreateEvents from '../createEvents/CreateEvents'
 import EventsButton from '../eventsButton/EventsButton'
+import { Link } from 'react-router-dom'
 
 type eventDetails = {
   id: number
@@ -21,10 +22,18 @@ const EventsList = () => {
             ? events.data.map((event: eventDetails) => {
                 return (
                   <>
-                    <EventsButton
-                      title={event.event_name}
-                      committee={event.committee}
-                    ></EventsButton>
+                    <Link
+                      key={event.id}
+                      onClick={() => {
+                        console.log(event.id)
+                      }}
+                      to={`/scan/${event.id}`}
+                    >
+                      <EventsButton
+                        title={event.event_name}
+                        committee={event.committee}
+                      ></EventsButton>
+                    </Link>
                   </>
                 )
               })

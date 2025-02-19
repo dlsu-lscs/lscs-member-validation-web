@@ -1,4 +1,3 @@
-import NavBar from '../components/navbar/NavBar'
 import GoogleLogin from '@/components/GoogleLogin/GoogleLogin'
 import { useCookies } from 'react-cookie'
 import EventsList from '@/components/eventsList/EventsList'
@@ -8,7 +7,6 @@ const Home = () => {
   const [cookies, ,] = useCookies(['currentUser'])
   return (
     <>
-      <NavBar></NavBar>
       <div className="min-h-screen bg-black text-white flex justify-center">
         {!('currentUser' in cookies) ? (
           <>
