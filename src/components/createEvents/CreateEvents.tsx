@@ -31,6 +31,8 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 
+import usePost from '@/hooks/usePost'
+
 const CreateEvents = () => {
   const [cookies, ,] = useCookies(['currentUser'])
   const form = useForm<z.infer<typeof formSchema>>({
@@ -41,26 +43,10 @@ const CreateEvents = () => {
   })
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    const postData = async () => {
-      try {
-        const response = await axios.post(
-          `http://member-validation.app.dlsu-lscs.org/add-event`,
-          { email: cookies.currentUser, event_name: values.eventName },
-          {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          }
-        )
-        console.log(response)
-        if (response.status == 200) {
-          window.location.reload()
-        }
-      } catch (e) {
-        console.log(e)
-      }
-    }
-    postData()
+    usePost('http://member-validation.app.dlsu-lscs.org/add-event', {
+      email: cookies.currentUser,
+      event_name: values.eventName,
+    })
   }
   return (
     <>
