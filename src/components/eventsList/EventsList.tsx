@@ -86,8 +86,8 @@ const EventsList = () => {
                                 className="bg-red-900 text-white"
                                 onClick={() => {
                                   useDelete(
-                                    'http://member-validation.app.dlsu-lscs.org/delete-event',
-                                    event.event_name
+                                    'http://member-validation.app.dlsu-lscs.org/delete-event?event=' +
+                                      encodeURIComponent(event.event_name)
                                   )
                                 }}
                               >

@@ -1,9 +1,8 @@
 import axios from 'axios'
 
-const useDelete = async (url: string, deleteData: any) => {
+const useDelete = async (url: string) => {
   try {
     const response = await axios.delete(url, {
-      data: deleteData,
       headers: {
         'Content-Type': 'application/json',
       },
