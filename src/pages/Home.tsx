@@ -1,14 +1,14 @@
-import GoogleLogin from '@/components/GoogleLogin/GoogleLogin'
-import { useCookies } from 'react-cookie'
-import EventsList from '@/components/eventsList/EventsList'
-import UserInfo from '@/components/userInfo/UserInfo'
+import GoogleLogin from "@/components/GoogleLogin/GoogleLogin";
+import { useCookies } from "react-cookie";
+import EventsList from "@/components/eventsList/EventsList";
+import UserInfo from "@/components/userInfo/UserInfo";
 
 const Home = () => {
-  const [cookies, ,] = useCookies(['currentUser'])
+  const [cookies, ,] = useCookies(["currentUser"]);
   return (
     <>
       <div className="min-h-screen bg-black text-white flex justify-center">
-        {!('currentUser' in cookies) ? (
+        {!("currentUser" in cookies) ? (
           <>
             <div className="my-16 flex flex-col items-center space-y-8">
               <div className="bg-gray-950 border-2 border-gray-500 rounded-lg px-6 py-8 flex flex-col items-center justify-center space-y-3">
@@ -21,8 +21,14 @@ const Home = () => {
         ) : (
           <>
             <div className="space-y-8">
-              <div className="bg-gray-950 border-2 border-gray-500 rounded-lg p-2 flex flex-col items-center justify-center space-y-3">
-                <UserInfo></UserInfo>
+              <div className=" flex flex-col items-center justify-center space-y-3">
+                <div
+                  className="
+                bg-gray-950 border-2 border-gray-500 rounded-lg p-2
+                "
+                >
+                  <UserInfo></UserInfo>
+                </div>
               </div>
               <EventsList></EventsList>
             </div>
@@ -30,7 +36,7 @@ const Home = () => {
         )}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,4 +1,4 @@
-import { useCookies } from 'react-cookie'
+import { useCookies } from "react-cookie";
 
 import {
   Card,
@@ -6,15 +6,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import ClaimStudent from '../claimStudent/ClaimStudent'
+} from "@/components/ui/card";
+import ClaimStudent from "../claimStudent/ClaimStudent";
 
 type event = {
-  eventName: string
-}
+  eventName: string;
+};
 
 export const StudentInfo = (props: event) => {
-  const [cookies, , removeCookie] = useCookies(['currentID'])
+  const [cookies, , removeCookie] = useCookies(["currentID"]);
 
   return (
     <>
@@ -23,7 +23,7 @@ export const StudentInfo = (props: event) => {
           <button
             className="border-2 flex p-2 rounded-lg hover:p-3 transition-all"
             onClick={() => {
-              removeCookie('currentID', { path: '/' })
+              removeCookie("currentID", { path: "/" });
             }}
           >
             <svg
@@ -58,7 +58,7 @@ export const StudentInfo = (props: event) => {
         </Card>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default StudentInfo
+export default StudentInfo;
